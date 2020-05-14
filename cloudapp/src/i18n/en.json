@@ -1,0 +1,13 @@
+{
+  "Main": {
+    "Intro": "Availability of the displayed records in Hathitrust:",
+    "Record": "Hathitrust record",
+    "NoHathiRecord": "No Hathitrust record found.",
+    "Availability": "Availability",
+    "NoRecords": "To check for Hathitrust availability, navigate to bibliographic records."
+  },
+  "Hathi": {
+    "FullView": "Full View",
+    "Limited": "Limited"
+  }
+}

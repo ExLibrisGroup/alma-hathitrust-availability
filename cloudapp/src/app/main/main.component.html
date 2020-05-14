@@ -1,0 +1,30 @@
+<div class="loading-shade" *ngIf="loading">
+  <mat-progress-spinner 
+    mode="indeterminate"
+    diameter="50"
+    >
+  </mat-progress-spinner>
+</div>
+
+<div *ngIf="bibs.length>0 else nobibs">
+  <p translate>Main.Intro</p>
+  <mat-list>
+    <mat-list-item *ngFor="let bib of bibs">
+      <h3 matLine>{{bib.description || bib.id}}</h3>
+      <p matLine *ngIf="bib.hathi?.record">
+        <a [href]="bib.hathi.record.recordURL" target="_blank" translate>Main.Record</a>
+      </p>
+      <p matLine *ngIf="bib.hathi?.availability">
+        <span class="with-icon"><mat-icon class="green">check</mat-icon> {{'Main.Availability' | translate}}: {{bib.hathi.availability}}</span>
+      </p>
+      <p matLine *ngIf="bib.hathi && !bib.hathi.record">
+        <span class="not-available" translate>Main.NoHathiRecord</span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</div>
+<ng-template #nobibs>      
+    <p translate>Main.NoRecords</p>
+</ng-template>
+
+

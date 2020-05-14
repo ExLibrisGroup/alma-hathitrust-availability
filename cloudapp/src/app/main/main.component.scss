@@ -1,0 +1,26 @@
+.green {
+  color: green;
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+}
+
+span.not-available {
+  font-weight: 100;
+  font-size: small;
+}
+
+.loading-shade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
