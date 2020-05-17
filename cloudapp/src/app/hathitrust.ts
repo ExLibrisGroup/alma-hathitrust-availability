@@ -29,7 +29,7 @@ export class HathitrustSearch {
       let ids = [['id', bib.mms_id]];
       if (bib.network_number) {
         for (let i=0; i<bib.network_number.length; i++) {
-          let m = bib.network_number[i].match(/^\(OCoLC\)\s*(\d*)\s*/);
+          let m = bib.network_number[i].match(/^\(OCoLC\)\s*([ocm|ocn|on]*\d+)\s*/);
           if (m) {
             ids.push(['oclc', m[1]]);
             break;

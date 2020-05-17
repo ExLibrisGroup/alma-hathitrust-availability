@@ -6,6 +6,6 @@
     "start": "eca start"
   },
   "dependencies": {
-    "@exlibris/exl-cloudapp-base": "^0.1.19"
+    "@exlibris/exl-cloudapp-base": "^0.1.20"
   }
 }
