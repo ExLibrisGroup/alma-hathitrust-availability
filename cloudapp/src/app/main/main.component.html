@@ -9,8 +9,8 @@
 <div *ngIf="bibs.length>0 else nobibs">
   <p translate>Main.Intro</p>
   <mat-list>
-    <mat-list-item *ngFor="let bib of bibs">
-      <h3 matLine>{{bib.description || bib.id}}</h3>
+    <mat-list-item *ngFor="let bib of bibs; index as i">
+      <h3 matLine>{{i+1}}. {{bib.description || bib.id}}</h3>
       <p matLine *ngIf="bib.hathi?.record">
         <a [href]="bib.hathi.record.recordURL" target="_blank" translate>Main.Record</a>
       </p>
