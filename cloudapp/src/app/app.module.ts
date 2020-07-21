@@ -8,6 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
+import { HathiTrustSearchService } from './hathitrust.service';
 
 export function getToastrModule() {
   return ToastrModule.forRoot({
@@ -30,7 +31,9 @@ export function getToastrModule() {
     getTranslateModule(),
     getToastrModule()
   ],
-  providers: [],
+  providers: [
+    HathiTrustSearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

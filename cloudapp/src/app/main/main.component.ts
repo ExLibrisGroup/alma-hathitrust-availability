@@ -1,9 +1,7 @@
 import { Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CloudAppEventsService, EntityType, CloudAppRestService } from '@exlibris/exl-cloudapp-angular-lib';
-import { HttpClient } from '@angular/common/http';
-import { HathitrustSearch } from '../hathitrust';
-import { TranslateService } from '@ngx-translate/core';
+import { CloudAppEventsService, EntityType } from '@exlibris/exl-cloudapp-angular-lib';
+import { HathiTrustSearchService } from '../hathitrust.service';
 
 @Component({
   selector: 'app-main',
@@ -12,19 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class MainComponent implements OnInit, OnDestroy {
   private pageLoad$: Subscription;
-  private hathi: HathitrustSearch;
   bibs: any[] = [];
   loading = false;
 
   constructor(
     private eventsService: CloudAppEventsService,
-    private restService: CloudAppRestService,
-    private http: HttpClient,
-    private translate: TranslateService
+    private hathi: HathiTrustSearchService
   ) { }
 
   ngOnInit() {
-    this.hathi = new HathitrustSearch(this.http, this.restService, this.translate)
     this.pageLoad$ = this.eventsService.onPageLoad( pageInfo => {
       const entities = (pageInfo.entities||[]).filter(e=>e.type==EntityType.BIB_MMS);
       if (entities.length > 0) {

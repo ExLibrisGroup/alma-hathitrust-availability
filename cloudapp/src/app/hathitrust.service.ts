@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { Entity, CloudAppRestService } from "@exlibris/exl-cloudapp-angular-lib";
 import { map, switchMap } from "rxjs/operators";
 import { forkJoin } from "rxjs";
@@ -5,7 +6,8 @@ import { chunk, omap, combine } from "./utilities";
 import { HttpClient } from "@angular/common/http";
 import { TranslateService } from "@ngx-translate/core";
 
-export class HathitrustSearch {
+@Injectable()
+export class HathiTrustSearchService {
   constructor (
     private http: HttpClient,
     private restService: CloudAppRestService,
@@ -46,7 +48,7 @@ export class HathitrustSearch {
   private calculateAvailability(items: any[]) {
     if (items.length==0)
       return '';
-    else if (items.some(i=>i.usRightsString=='Full View'))
+    else if (items.some(i=>/full/i.test(i.usRightsString)))
       return this.translate.instant('Hathi.FullView');
     else 
       return this.translate.instant('Hathi.Limited');
