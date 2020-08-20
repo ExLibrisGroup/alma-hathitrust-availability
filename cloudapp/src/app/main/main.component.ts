@@ -2,6 +2,8 @@ import { Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CloudAppEventsService, EntityType } from '@exlibris/exl-cloudapp-angular-lib';
 import { HathiTrustSearchService } from '../hathitrust.service';
+import { finalize } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-main',
@@ -15,6 +17,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   constructor(
     private eventsService: CloudAppEventsService,
+    private toastr: ToastrService,
     private hathi: HathiTrustSearchService
   ) { }
 
@@ -24,10 +27,12 @@ export class MainComponent implements OnInit, OnDestroy {
       if (entities.length > 0) {
         this.loading = true;
         this.bibs = entities;
-        this.hathi.search(entities)
+        this.hathi.search(entities).pipe(
+          finalize(() => this.loading = false)
+        )
         .subscribe({
           next: results => Object.keys(results).forEach(key=>this.bibs.find(b=>b.id==key).hathi=results[key]),
-          complete: () => this.loading = false
+          error: e => this.toastr.error(`An error occurred while loading availability: ${e.message}`),
         });
       }
     });  
