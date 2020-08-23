@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
 import { HathiTrustSearchService } from './hathitrust.service';
+import { HelpComponent } from './help/help.component';
 
 export function getToastrModule() {
   return ToastrModule.forRoot({
@@ -18,10 +19,11 @@ export function getToastrModule() {
 }
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    MainComponent
-  ],
+    MainComponent,
+      HelpComponent
+   ],
   imports: [
     MaterialModule,
     BrowserModule,

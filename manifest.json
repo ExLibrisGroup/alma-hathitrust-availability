@@ -16,6 +16,9 @@
          "https://catalog.hathitrust.org/"
       ]
    },
+   "pages": {
+      "help": "/#/help"
+   },
    "entities": [
       "BIB_MMS"
    ]

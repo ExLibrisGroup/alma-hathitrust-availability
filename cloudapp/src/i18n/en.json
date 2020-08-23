@@ -9,5 +9,10 @@
   "Hathi": {
     "FullView": "Full View",
     "Limited": "Limited"
+  },
+  "Help": {
+    "Text": "For more help with this app, or to report a problem, please open an issue by clicking on the link below.",
+    "Back": "Back",
+    "Open": "Open an issue"
   }
 }
