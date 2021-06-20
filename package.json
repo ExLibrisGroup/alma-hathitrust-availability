@@ -14,7 +14,7 @@
     "@exlibris/exl-cloudapp-angular-lib": "^1.0.1",
     "@exlibris/exl-cloudapp-base": "^1.0.1",
     "@ngx-translate/core": "^12.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "ngx-translate-parser-plural-select": "^1.1.3",
     "rxjs": "^6.5.5",
     "uuid": "^8.0.0"
