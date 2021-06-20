@@ -3,7 +3,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AlertService, CloudAppEventsService, EntityType } from '@exlibris/exl-cloudapp-angular-lib';
 import { HathiTrustSearchService } from '../hathitrust.service';
 import { finalize } from 'rxjs/operators';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-main',

@@ -1,9 +1,9 @@
 {
    "id": "exlibrisgroup/alma-hathitrust-availability",
    "title": "HathiTrust Availability",
-   "description": "This app queries the HathiTrust API to look for availability for each displayed BIB record. Match is done based on OCLC, ISBN, and ISSN numbers as cataloged in the record.",
    "subtitle": "Shows availability in HathiTrust for displayed records",
    "author": "Ex Libris",
+   "description": "This app queries the HathiTrust API to look for availability for each displayed BIB record. Match is done based on OCLC, ISBN, and ISSN numbers as cataloged in the record.",
    "icon": {
       "type": "url",
       "value": "/assets/hathitrust-logo.png"
