@@ -12,7 +12,7 @@
     "@angular/material": "^9.2.0",
     "@angular/router": "^9.1.0",
     "@exlibris/exl-cloudapp-angular-lib": "^1.0.1",
-    "@exlibris/exl-cloudapp-base": "^1.0.1",
+    "@exlibris/exl-cloudapp-base": "^1.4.4",
     "@ngx-translate/core": "^12.1.0",
     "lodash": "^4.17.21",
     "ngx-translate-parser-plural-select": "^1.1.3",
