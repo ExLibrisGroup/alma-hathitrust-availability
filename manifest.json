@@ -6,7 +6,7 @@
    "description": "This app queries the HathiTrust API to look for availability for each displayed BIB record. Match is done based on OCLC, ISBN, and ISSN numbers as cataloged in the record.",
    "icon": {
       "type": "url",
-      "value": "/assets/hathitrust-logo.png"
+      "value": "/assets/hathitrust-logo-2026.png"
    },
    "contentSecurity": {
       "sandbox": {
